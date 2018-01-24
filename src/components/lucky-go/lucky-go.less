@@ -1,0 +1,67 @@
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+div.lucky-go{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  img.circle {
+    width: 140%;
+    position: absolute;
+    left: -20%;
+    top: -20%;
+    -webkit-animation: rotating 2s linear infinite;
+    -moz-animation: rotating 2s linear infinite;
+    -ms-animation: rotating 2s linear infinite;
+    -o-animation: rotating 2s linear infinite;
+    animation: rotating 2s linear infinite;
+    background: transparent;
+  }
+  img.tip{
+    position: absolute;
+    width: 82px;
+    height: 44px;
+    left: 50%;
+    margin-left: -41px;
+    top: -50px;
+  }
+  div{
+    text-align: center;
+    position: relative;
+    img.item{
+      width: 100%;
+      position: relative;
+    }
+    img.item.heart{
+      width: 70%;
+      margin-top: 20%;
+      left: 2%;
+    }
+  }
+}

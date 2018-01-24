@@ -1,0 +1,44 @@
+div.page-intro{
+  ul {
+    margin: 0;
+  }
+  div.brand{
+    width: 200px;
+    top: -45px;
+    left: 50%;
+    margin-left: -100px;
+  }
+}
+
+div.page-home{
+  div.content-box{
+    height: 911px/2;
+  }
+}
+
+div.video-wpr{
+  position: fixed;
+  background: #000;
+  width: 100%;
+  height: 100%;
+  & > img {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+  & > div.v-layer{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top:0;
+    z-index: 2;
+  }
+  & > div.video {
+    z-index: 3;
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    top: 50%;
+  }
+}

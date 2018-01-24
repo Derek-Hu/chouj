@@ -1,0 +1,30 @@
+@import '../../styles/variables.less';
+
+div.layout{
+  margin: 0 auto;
+  width: 1200px;
+  &.w-1200{
+    width: 1200px;
+  }
+  &.w-1000{
+    width: 1000px;
+  }
+  &.w-1440{
+    width: 1440px;
+  }
+}
+
+div.left-layout{
+  background: #55687b;
+  vertical-align: top;
+}
+div.right-layout{
+  border: 1px solid #DFDFDF;
+  width: 100%;
+  div.item-list{
+    border: 0;
+  }
+}
+div.left-layout, div.right-layout{
+  display: table-cell;
+}
