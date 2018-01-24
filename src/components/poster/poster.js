@@ -42,7 +42,7 @@ export default class PosterContent extends React.Component {
                 <tr><td>姓<span>姓名</span>名:</td><td>
                   <input type="text" placeholder="请输入姓名（必填）" ref={(u) => { this.username = u; }} maxLength="50"/>
                 </td></tr>
-                <tr><td>手机号码:</td><td><input type="tel" ref={(c) => { this.cellphone = c; }} maxLength="11" placeholder="请输入联系方式"/></td></tr>
+                <tr><td>手机号码:</td><td><input type="tel" ref={(c) => { this.cellphone = c; }} maxLength="11" placeholder="请输入联系方式（必填）"/></td></tr>
                 <tr><td>地<span>地址</span>址:</td><td>
                   <input ref={(a) => { this.address = a; }} type="text" placeholder="请输入通讯地址" maxLength="100"/></td></tr>
               </tbody>
