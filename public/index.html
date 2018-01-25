@@ -29,7 +29,26 @@
       You need to enable JavaScript to run this app.
     </noscript>
     <div id="root"></div>
-    <audio src="audio/shake+shake.mp3" autoplay="autoplay" loop="loop"></audio>
+    <audio id="audio" src="audio/shake+shake.mp3" autoplay="autoplay" loop="loop"></audio>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        function audioAutoPlay() {
+            var audio = document.getElementById('audio');
+                audio.play();
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                audio.play();
+            }, false);
+        }
+        audioAutoPlay();
+    });
+    document.addEventListener('touchstart', function () {
+    function audioAutoPlay() {
+        var audio = document.getElementById('audio');
+            audio.play();
+    }
+    audioAutoPlay();
+});
+    </script>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
