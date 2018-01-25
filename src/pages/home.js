@@ -23,24 +23,17 @@ export default class HomePage extends React.Component {
   openV = ()=>{
     this.setState({
       isOpen: true
-    })
+    });
+    document.getElementById("videoContent").play();
   }
-  closeV = (e)=>{
-      this.setState({
-        isOpen: false,
-        nextPage: true
-      })
-  }
-  onplaying = ()=>{
+  onEnded = () => {
     this.setState({
-      played: true,
-      nextPage: false
+      nextPage: true
     })
   }
   render() {
-    return this.state.played && this.state.nextPage?<Redirect to="intro"/> : <div className="page-home">
-      {
-        !this.state.isOpen && <ContentBox animation={true}>
+    return this.state.nextPage?<Redirect to="intro"/> : <div className="page-home">
+        <ContentBox animation={true}>
           <ContentTitle>
             <Start2018 animation={true}></Start2018>
           </ContentTitle>
@@ -51,13 +44,13 @@ export default class HomePage extends React.Component {
             <LuckyGo item="item-heart" onClick={this.openV} tip="tip-more"></LuckyGo>
           </ContentFooter>
         </ContentBox>
-      }
       {
-        this.state.isOpen && <div id="video-wpr" className="video-wpr">
-          <div className="v-layer" onClick={this.closeV}></div>
-          <img src={closeImg} />
+        <div id="video-wpr" className={'video-wpr'+(this.state.isOpen?' visible':'')}>
+          <div className="v-layer"></div>
           <div className="video" style={{height: height/2, 'marginTop': -height/4}}>
-              <video className="video-js" onPlaying={this.onplaying} width={width} height={height/2} data-setup='{}' preload="auto" controls="controls" poster="video-poster.png">
+              <video id="videoContent" className="video-js" width={width}
+                onEnded={this.onEnded}
+                height={height/2} data-setup='{}' preload="auto" poster="video-poster.png">
               <source src="video/hd1080p.mp4" type="video/mp4"/>
               <source src="video/hd1080p.ogg" type="video/webm"/>
             </video>
