@@ -6,6 +6,10 @@ import item1 from '__Source/components/intro/images/award1.png';
 import item2 from '__Source/components/intro/images/award2.png';
 import item3 from '__Source/components/intro/images/award3.png';
 
+import lucky1 from '__Source/components/intro/images/lucky1.png';
+import lucky2 from '__Source/components/intro/images/lucky2.png';
+import lucky3 from '__Source/components/intro/images/lucky3.png';
+
 import bless2018 from '__Source/components/intro/images/2018.png';
 import activityIntro from '__Source/components/intro/images/activity-intro.png';
 import brandIntro from '__Source/components/intro/images/brand-intro.png';
@@ -30,9 +34,9 @@ export default class IntroContent extends React.Component {
         </li>
         <li>
           { !this.props.item && <img src={item2} alt="" />}
-          { this.props.item==='1' && <img src={item1} alt="" />}
-          { this.props.item==='2' && <img src={item2} alt="" />}
-          { this.props.item==='3' && <img src={item3} alt="" />}
+          { this.props.item==='1' && <img src={lucky1} alt="" />}
+          { this.props.item==='2' && <img src={lucky2} alt="" />}
+          { this.props.item==='3' && <img src={lucky3} alt="" />}
         </li>
         <li>
           <img src={item3} alt=""/>
