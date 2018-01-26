@@ -20,7 +20,7 @@ export default class LuckyGo extends React.Component {
 
   render() {
     const url = this.props.item === 'item-lucky'? goLucky:(this.props.item === 'item-get'?go2:heart);
-    const clz = (this.props.item === 'item-lucky' || this.props.item === 'item-get')? 'item lucky':'item heart';
+    const clz = this.props.item === 'item-lucky'? 'item lucky':(this.props.item === 'item-get'?'item get':'item heart');
 
     return <div className="lucky-go" onClick={this.props.onClick}>
       <img className="circle" src={circle} alt=""/>
