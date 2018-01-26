@@ -14,6 +14,8 @@ import bless2018 from '__Source/components/intro/images/2018.png';
 import activityIntro from '__Source/components/intro/images/activity-intro.png';
 import brandIntro from '__Source/components/intro/images/brand-intro.png';
 
+import cong from '__Source/components/intro/images/cong.png';
+
 import left from '__Source/components/intro/images/left.png';
 import right from '__Source/components/intro/images/right.png';
 
@@ -30,7 +32,7 @@ export default class IntroContent extends React.Component {
       <img src={brandIntro} alt=""/>
       <ul>
         <li>
-          <img src={item1} alt=""/>
+          <img src={this.props.item?cong:item1} alt=""/>
         </li>
         <li>
           { !this.props.item && <img src={item2} alt="" />}
