@@ -8,6 +8,8 @@ import goLucky from '__Source/components/lucky-go/images/go.png';
 import moreInfo from '__Source/components/lucky-go/images/more-info.png';
 import video from '__Source/components/lucky-go/images/more-info.png';
 
+import go2 from '__Source/components/lucky-go/images/go2.png';
+
 export default class LuckyGo extends React.Component {
 
   static propTypes = {
@@ -17,7 +19,7 @@ export default class LuckyGo extends React.Component {
   };
 
   render() {
-    const url = this.props.item === 'item-lucky'? goLucky:heart;
+    const url = this.props.item === 'item-lucky'? goLucky:(this.props.item === 'item-get'?go2:heart);
     const clz = this.props.item === 'item-lucky'? 'item lucky':'item heart';
 
     return <div className="lucky-go" onClick={this.props.onClick}>

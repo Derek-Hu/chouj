@@ -38,7 +38,7 @@ export default class LuckyPage extends React.Component {
           <IntroContent none={false} item={localStorage.getItem('AZUL2018L.prizeId')}></IntroContent>
         </ContentBody>
         <ContentFooter>
-          <LuckyGo item="item-lucky" onClick={this.openInput}></LuckyGo>
+          <LuckyGo item="item-get" onClick={this.openInput}></LuckyGo>
         </ContentFooter>
       </ContentBox>
 
