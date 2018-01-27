@@ -19,22 +19,6 @@ import brandIntro from '__Source/components/intro/images/brand-intro.png';
 import '__Source/pages/pages.less';
 import '__Source/common/rAF';
 
-function parseJSON(reponse) {
-    return reponse.json();
-}
-
-const luckyGo = () => {
-  fetch('/v1/prize/win').then(parseJSON).then(resp => {
-    if(resp.code === 200){
-      localStorage.setItem('AZUL2018L.isAlreadyGo', 'Done');
-      localStorage.setItem('AZUL2018L.token', resp.content.token);
-      localStorage.setItem('AZUL2018L.prizeId', resp.content.prizeId?resp.content.prizeId:'');
-    }
-  })
-}
-
-luckyGo();
-
 ReactDOM.render(
       <Router>
         <div>

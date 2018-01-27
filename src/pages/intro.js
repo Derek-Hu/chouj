@@ -8,6 +8,21 @@ import Brand from '__Source/components/brand/brand';
 import LuckyGo from '__Source/components/lucky-go/lucky-go';
 import IntroContent from '__Source/components/intro/intro';
 
+
+function parseJSON(reponse) {
+    return reponse.json();
+}
+
+const luckyGo2 = () => {
+  fetch('/v1/prize/win').then(parseJSON).then(resp => {
+    if(resp.code === 200){
+      localStorage.setItem('AZUL2018L.isAlreadyGo', 'Done');
+      localStorage.setItem('AZUL2018L.token', resp.content.token);
+      localStorage.setItem('AZUL2018L.prizeId', resp.content.prizeId?resp.content.prizeId:'');
+    }
+  })
+}
+
 export default class IntroPage extends React.Component {
   constructor(){
       super();
@@ -16,8 +31,10 @@ export default class IntroPage extends React.Component {
       }
   }
   luckyGo = () => {
-      this.setState({
-        nextPage: (localStorage.getItem('AZUL2018L.prizeId')?`lucky/${localStorage.getItem('AZUL2018L.prizeId')}`:'none')
+      luckyGo2().then(() => {
+        this.setState({
+          nextPage: (localStorage.getItem('AZUL2018L.prizeId')?`lucky/${localStorage.getItem('AZUL2018L.prizeId')}`:'none')
+        })
       })
   }
   render() {
