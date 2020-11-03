@@ -1,0 +1,20 @@
+<div class="randomArea" ng-show="award">
+    <div class="title" ng-style="title">
+        <h1 ng-bind-html="trustAsHtml(award.name)"></h1>
+        <p ng-bind="award.winn.length+'/'+award.total"></p>
+    </div>
+    <div class="members" ng-class="{perfect: randomEmployees.length <= MAX_COL_SIZE, randoming: award.status === randomStatus }" ng-if="randomEmployees">
+        <ul>
+            <li ng-repeat="empId in randomEmployees">
+                <a href="javascript: void(0);">
+                    <span ng-bind="ALL_USERS_ORIGINAL[empId].name"></span>
+                    <span ng-bind="empId.indexOf(NO_EMP_ID_KEY)!==-1?NO_EMP_ID_KEY: empId"></span>
+                    <div class="delete" ng-click="removeAwardEmployee(empId)"></div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div ng-class="{randoming: btnText==='停止'}">
+        <button ng-click="clickAction()" ng-class="{randoming: btnText==='停止'}" ng-bind="btnText"></button>
+    </div>
+</div>

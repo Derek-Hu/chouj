@@ -1,0 +1,82 @@
+$red: #56aa89;
+.title {
+    font-size: 1.2em;
+    font-weight: normal;
+    color: $red;
+    text-align: center;
+}
+
+.awardRecord h1 {
+    width: 100%;
+    margin: 0 auto;
+    color: #56aa89;
+    text-align: center;
+}
+
+td.awardName {
+    border-bottom: 1px solid #ABABAB;
+    cursor: pointer;
+    word-break: break-all;
+}
+
+.notReach {
+    color: red;
+}
+
+td.awardValues {
+    span {
+        float: left;
+        width: 20%;
+        padding: 0.5em 0;
+        color: $red;
+    }
+    span.showTip {
+        color: red;
+    }
+}
+
+table {
+    margin: 1em auto;
+    width: 100%;
+    tr {
+        height: 2em;
+        padding: 0.5em;
+    }
+    td {
+        border-collapse: collapse;
+    }
+    tr.summary {
+        td {
+            border-bottom: 1px solid #ababab;
+        }
+    }
+}
+
+.highLight {
+    color: #56aa89;
+}
+
+.showTip {
+    color: red;
+}
+
+.firstCol {
+    text-align: center;
+    width: 6em;
+}
+
+.left {
+    vertical-align: top;
+}
+
+a.exportFile {
+    display: inline-block;
+    margin-right: 1em;
+    font-weight: bold;
+    color: #56aa89;
+    cursor: pointer;
+    text-decoration: underline;
+}
+a.exportFile:hover{
+    color: #333;
+}

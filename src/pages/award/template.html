@@ -1,0 +1,25 @@
+<h1 ng-class="style.title">获奖记录</h1>
+<table>
+    <tr ng-class="style.summary">
+        <td ng-class="style.firstCol">奖项名称</td>
+        <td>
+                <span ng-bind-html="award.name"></span>奖项数量<span ng-bind="award.total"></span>名
+                共抽<span ng-bind="award.winn.length + award.absent.length"></span>名
+                <span ng-class="award.absent.length? style.notReach: ''">未到<span ng-bind="award.absent.length"></span>名</span>
+        </td>
+        <td ng-class="[style.lotteryTime]" align="right"><a ng-href="" ng-class="style.exportFile" ng-click="getCSVData()">导出CSV</a><span ng-bind="time"></span></td>
+    </tr>
+    <tr ng-class="style.firstCol">
+        <td ng-click="handleSelected(awards[0])" ng-bind-html="awards[0].name"ng-class="[selectedId === awards[0].id ? style.highLight : '', style.awardName]"></td>
+        <td rowspan="{{awards.length}}" colspan="2" ng-class="[style.left, style.awardValues]" align="left">
+            <span ng-repeat="winner in selectedAward.winn" ng-bind="ALL_USERS_ORIGINAL[winner].name+'('+(winner.indexOf(NO_EMP_ID_KEY)!==-1?NO_EMP_ID_KEY: winner)+')'"></span>
+            <span ng-repeat="absent in selectedAward.absent" ng-bind="ALL_USERS_ORIGINAL[absent].name+'('+(absent.indexOf(NO_EMP_ID_KEY)!==-1?NO_EMP_ID_KEY: absent)+')'" ng-class="selectedAward.absent.length !== 0 ? style.showTip : ''"></span>
+        </td>
+    </tr>
+    <tr ng-class="[style.firstCol]" ng-repeat="award in awards" ng-if="$index>0">
+        <td ng-bind-html="award.name" ng-click="handleSelected(award)" 
+            ng-class="[selectedId === award.id ? style.highLight : '', style.awardName]">
+        </td>
+        <td></td>
+    </tr>
+</table>

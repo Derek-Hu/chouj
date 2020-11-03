@@ -1,0 +1,14 @@
+<div class="randomArea" ng-show="award">
+    <div class="title" ng-style="title">
+        <h1 ng-bind-html="trustAsHtml(award.name)"></h1>
+        <p ng-bind="award.winn.length+'/'+award.total"></p>
+    </div>
+    <div class="members" ng-class="{perfect: randomEmployees.length <= MAX_COL_SIZE}" ng-if="randomEmployees">
+        <ul >
+            <li ng-repeat="empId in randomEmployees">
+                    <span ng-bind="ALL_USERS_ORIGINAL[empId].name"></span>
+                    <span ng-bind="empId.indexOf(NO_EMP_ID_KEY)!==-1?NO_EMP_ID_KEY: empId"></span>
+            </li>
+        </ul>
+    </div>
+</div>

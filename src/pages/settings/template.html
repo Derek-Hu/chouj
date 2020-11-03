@@ -1,0 +1,61 @@
+<div ng-class="style.settingImage">
+        <h1 ng-class="style.showMenu">奖项设置</h1>
+        <div ng-class="style.settingForm">
+            <form>
+                <div ng-class="style.awardName">
+                    <label>奖项名称</label><input type="text" placeholder="如: 附加奖一万元" ng-model="awardName"/>
+                </div>
+                <div ng-class="style.awardAmount">
+                    <label>奖项人数</label><input type="text" placeholder="奖项数量，如30" ng-model="awardAmount"/>
+                </div>
+                <div ng-class="style.awardUnit">
+                    <label>每次抽取个数</label><input type="text" placeholder="最大数量为10" ng-model="awardUnit"/>
+                </div>
+                <div ng-class="style.range">
+                    <label>抽奖范围</label><input type="checkbox" ng-model="isNotContain"/>不包括已中奖人员
+                </div>
+                <div ng-class="style.addButton">
+                    <button ng-click="addAward(awardName, awardAmount, awardUnit, isNotContain)">添加</button><br/>
+                </div>
+            </form>
+        </div>
+    <div ng-class="style.secondPart">
+        <table>
+            <tr ng-class="style.tableHead">
+                <td>奖项名称</td>
+                <td>中奖人数/奖品个数</td>
+                <td>每次抽取人数</td>
+                <td>抽奖状态</td>
+                <td>抽奖范围</td>
+                <td>操作</td>
+            </tr>
+            <tr ng-repeat="award in awards track by $index" ng-click="handleClick(award)"
+                ng-class="{'{{style.colorByRow}}': currentAwardId === award.id, '{{style.fontColor}}': award.nameHide}">
+                <td ng-class="style.showAwardName"><span ng-hide="award.nameVisible" ng-bind-html="award.name"></span>
+                    <input type="text" ng-model="award.name" ng-show="award.nameVisible"/>
+                    <span ng-hide="award.nameVisible || award.nameHide" ng-click="showModify($event, award, 'nameVisible')">修改</span>
+                    <span ng-hide="!award.nameVisible" ng-click="confirmModify($event, award)">确认</span>
+                </td>
+                <td ng-class="{'{{style.showAwardAmount}}': true, '{{style.randomColor}}': !award.amountHide}">
+                    {{award.winn.length}}/<span ng-hide="award.totalVisible" ng-bind="award.total"></span>
+                    <input type="text" ng-model="award.total" ng-show="award.totalVisible"/>
+                    <span ng-hide="award.totalVisible || award.amountHide" ng-click="showModify($event, award, 'totalVisible')">修改</span>
+                    <span ng-hide="!award.totalVisible" ng-click="confirmModify($event, award)">确认</span>
+                </td>
+                <td ng-class="style.showAwardUnit"><span ng-hide="award.unitVisible" ng-bind="award.unit"></span>
+                    <input type="text" ng-model="award.unit" ng-show="award.unitVisible"/>
+                    <span ng-hide="award.unitVisible || award.unitHide" ng-click="showModify($event, award, 'unitVisible')">修改</span>
+                    <span ng-hide="!award.unitVisible" ng-click="confirmModify($event, award)">确认</span>
+                </td>
+                <td ng-bind="(award.status === AWARD_STATUS.NOT_START || award.status === AWARD_STATUS.READY)? '未抽奖' : ((award.status === AWARD_STATUS.RANDOM || award.status === AWARD_STATUS.PAUSE)?'进行中':'已抽奖')"
+                    ng-class="(award.status === AWARD_STATUS.RANDOM || award.status === AWARD_STATUS.PAUSE) ? style.showRed : ''"></td>
+                <td ng-bind="award.isNormal ? '不包括已抽奖人员' : '包括已抽奖人员' "
+                    ng-class="!award.isNormal ? style.showRed : ''"></td>
+                <td>
+                    <span ng-click="deleteAward(award)" ng-class="style.delete">删除</span>
+                    <img src='../../assets/images/switch.png' ng-class="style.switch" ng-hide='$index === 0 || award.switchIconHide || award.switchHide' ng-click="switchOrder($event, award)"/>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

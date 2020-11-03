@@ -1,0 +1,55 @@
+div,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+.menu {
+    visibility: hidden;
+    background-color: #56aa89;
+    height: 70px;
+    ul {
+        display: inline-block;
+        li {
+            list-style-type: none;
+            display: inline-block;
+            width: 5em;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+        }
+        li:hover {
+            background-color: #56bb87;
+        }
+    }
+    a {
+        color: white;
+        display: inline-block;
+        width: 5em;
+        height: 70px;
+    }
+}
+
+.features {
+    float: right;
+}
+
+.showMenu.serverHomeSide {
+    z-index: 9;
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 0 10%;
+}
+
+.showMenu {
+    height: 70px;
+    color: #56aa89;
+}
+
+.showMenu:hover {
+    .menu {
+        visibility: visible;
+    }
+}

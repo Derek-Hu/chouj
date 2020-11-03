@@ -1,0 +1,13 @@
+<div ng-class="[style.showMenu, isNoMenu? style.serverHomeSide: '']">
+    <div ng-class='style.menu' ng-hide="isHide">
+        <ul ng-class="style.award">
+            <li><a href="#!/home">抽奖</a></li>
+            <li><a href="#!/settings">奖项设置</a></li>
+            <li><a href="#!/award">获奖记录</a></li>
+        </ul>
+        <ul ng-class='style.features'>
+            <li><a target="_blank" href="#!/audience">观众入口</a></li>
+            <li><a href="javascript: void(0);" ng-click="downloadScreen()">屏幕截图</a></li>
+        </ul>
+    </div>
+</div>
