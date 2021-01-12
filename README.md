@@ -8,6 +8,7 @@
 # 抽奖程序使用方法：
 0. 直接下载[https://github.com/Derek-Hu/chouj/blob/master/build.zip](https://github.com/Derek-Hu/chouj/blob/master/build.zip)文件，无需使用源代码编译
 1. 修改默认奖项设置，或者部署后使用菜单【奖项设置】线上修改
+
 修改build文件夹中award.json
 ```js
 [{
