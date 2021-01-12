@@ -53,7 +53,7 @@
                     ng-class="!award.isNormal ? style.showRed : ''"></td>
                 <td>
                     <span ng-click="deleteAward(award)" ng-class="style.delete">删除</span>
-                    <img src='../../assets/images/switch.png' ng-class="style.switch" ng-hide='$index === 0 || award.switchIconHide || award.switchHide' ng-click="switchOrder($event, award)"/>
+                    <img src='/assets/images/switch.png' ng-class="style.switch" ng-hide='$index === 0 || award.switchIconHide || award.switchHide' ng-click="switchOrder($event, award)"/>
                 </td>
             </tr>
         </table>

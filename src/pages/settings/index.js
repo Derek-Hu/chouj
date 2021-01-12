@@ -1,5 +1,5 @@
 import template from './template.html';
-import style from './style.scss';
+import style from './style.less';
 import {AWARD_STATUS} from '../../constants'
 
 var controller = ['$scope', 'AwardSvc', function($scope, AwardSvc) {

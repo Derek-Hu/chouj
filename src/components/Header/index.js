@@ -1,5 +1,5 @@
 import template from './template.html';
-import style from './style.scss';
+import style from './style.less';
 
 export default {
     name: 'appHeader',

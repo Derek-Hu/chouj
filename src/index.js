@@ -6,7 +6,9 @@ import { downloadFile } from './utils';
 import { MAX_COL_SIZE } from './constants';
 import ngSanitize from  'angular-sanitize';
 import 'normalize.css';
-import './index.scss';
+import styles from './index.less';
+
+console.log(styles);
 
 var app = angular.module('app', [components, pages, ngSanitize]);
 
@@ -22,7 +24,7 @@ app.run(['$rootScope',  '$sce', function($rootScope, $sce) {
 
     $rootScope.MAX_COL_SIZE = MAX_COL_SIZE;
     // 所有抽奖人员名单
-    $rootScope.ALL_USERS = process.env.ALL_USERS[0].data;
+    $rootScope.ALL_USERS = window.ALL_USERS;
 
     $rootScope.pageLoaded = true;
 

@@ -1,9 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="./favicon.ico">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="./favicon.ico" />
     <!--
       Notice the use of %PUBLIC_URL% in the tag above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -14,9 +14,24 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>抽奖程序</title>
+    <script>
+      function loadChoujData(url, name) {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+          if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            window[name] = JSON.parse(xmlhttp.responseText);
+          }
+        };
+        xmlhttp.open("GET", url + "?t=" + Math.random(), false);
+        xmlhttp.send();
+      }
+
+      loadChoujData('/users.json', 'ALL_USERS');
+      loadChoujData('/award.json', 'PRESET_AWARD');
+    </script>
   </head>
   <body ng-show="pageLoaded">
-  <app-header is-hide="isAudiencePage" is-no-menu="isNoMenu"></app-header>
+    <app-header is-hide="isAudiencePage" is-no-menu="isNoMenu"></app-header>
     <div id="root" ng-view></div>
     <!--
       This HTML file is a template.

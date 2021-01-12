@@ -137,10 +137,9 @@ module.exports = {
           /\.html$/,
           /\.(js|jsx)$/,
           /\.less$/,
-          /\.scss$/,
           /\.css$/,
           /\.json$/,
-          /\.(gif|png|jpe?g|svg)$/i
+          // /\.(gif|png|jpe?g|svg)$/i
         ],
         loader: 'url',
         query: {
@@ -148,13 +147,13 @@ module.exports = {
           name: 'static/media/[name].[hash:8].[ext]'
         }
       },
-      {
-        test: /\.(gif|png|jpe?g|svg)$/i,
-        loaders: [
-          'url?limit=10000&hash=sha512&digest=hex&name=static/media/[name].[hash:8].[ext]',
-          'image-webpack?{optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}, mozjpeg: {quality: 65}}'
-        ]
-      },
+      // {
+      //   test: /\.(gif|png|jpe?g|svg)$/i,
+      //   loaders: [
+      //     'url?limit=10000&hash=sha512&digest=hex&name=static/media/[name].[hash:8].[ext]',
+      //     'image-webpack'
+      //   ]
+      // },
       // Process JS with Babel.
       {
         test: /\.(js|jsx)$/,
@@ -174,12 +173,12 @@ module.exports = {
       // In production, we use a plugin to extract that CSS to a file, but
       // in development "style" loader enables hot editing of CSS.
       {
-          test: /\.(css|scss)$/,
-          loader: ExtractTextPlugin.extract('css?importLoaders=1&modules&localIdentName=[local]---[hash:base64:5]!postcss!sass')
+          test: /\.(css)$/,
+          loader: ExtractTextPlugin.extract('css?importLoaders=1&modules&localIdentName=[local]---[hash:base64:5]!postcss')
       },
       {
         test: /\.less$/,
-        loader: 'style!css!postcss!less?{modifyVars:'+antdTheme+'}'
+        loader: 'style!css?importLoaders=1&modules&localIdentName=[local]---[hash:base64:5]!postcss!less?{modifyVars:'+antdTheme+'}'
       },
       // JSON is not enabled by default in Webpack but both Node and Browserify
       // allow it implicitly so we also enable it.

@@ -1,8 +1,8 @@
-$padding-left: 10%;
-$red: #56aa89;
-$gray: #333;
-$gray-light: #666;
-$gray-lighter: #999;
+@padding-left: 10%;
+@red: #56aa89;
+@gray: #333;
+@gray-light: #666;
+@gray-lighter: #999;
 body {
     font-size: 22px;
     background-color: #FFF;
@@ -45,8 +45,8 @@ body,
 
 body {
     margin: 0;
-    padding: 0 $padding-left;
-    background-image: url(./assets/images/background.jpg);
+    padding: 0 @padding-left;
+    background-image: url(/assets/images/background.jpg);
     background-attachment: fixed;
     background-position: center center;
     background-repeat: no-repeat;
@@ -70,13 +70,13 @@ a {
 
 :global(.randomArea .title) {
     h1 {
-        color: $red;
+        color: @red;
         font-weight: normal;
         font-size: 2em;
         margin: 0;
     }
     p {
-        color: $gray-lighter;
+        color: @gray-lighter;
         margin: 0;
         line-height: 1em;
         margin-bottom: 1em;
@@ -101,7 +101,7 @@ a {
 :global(.randomArea .members) {
     padding: 0 5%;
     ul {
-        color: $gray;
+        color: @gray;
         display: inline-block;
         width: 100%;
         text-align: left;
@@ -115,7 +115,7 @@ a {
             height: 3em;
             font-size: 1.3em;
             a {
-                color: $gray;
+                color: @gray;
                 color: #333;
                 display: inline-block;
                 height: 100%;
@@ -130,7 +130,7 @@ a {
                     right: 0;
                     display: block;
                     cursor: pointer;
-                    background-image: url('./assets/images/delete.png');
+                    background-image: url('/assets/images/delete.png');
                     background-repeat: no-repeat;
                     background-position: center center;
                     background-size: 0.5em;
@@ -144,12 +144,12 @@ a {
                     visibility: visible;
                 }
                 color: transparent;
-                border-color: $gray-lighter;
+                border-color: @gray-lighter;
             }
             span {
                 line-height: 1em;
                 display: block;
-                color: $gray-light;
+                color: @gray-light;
                 position: absolute;
                 width: 100%;
                 text-align: center;
@@ -158,7 +158,7 @@ a {
             }
             span + span {
                 font-size: 0.9em;
-                color: $gray-lighter;
+                color: @gray-lighter;
                 bottom: 0;
                 visibility: visible;
             }
@@ -174,7 +174,7 @@ a {
     width: 100%;
     transform: translateY(-50%);
     button {
-        background-color: $red;
+        background-color: @red;
         color: #FFF;
         height: 2em;
         line-height: 2em;

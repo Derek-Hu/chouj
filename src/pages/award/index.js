@@ -1,5 +1,5 @@
 import template from './template.html';
-import style from './style.scss';
+import style from './style.less';
 import { ALL_USERS_ORIGINAL, AWARD_STATUS, NO_EMP_ID_KEY, CSV_NAME } from '../../constants';
 
 var controller = ['$scope', 'AwardSvc', function($scope, AwardSvc) {

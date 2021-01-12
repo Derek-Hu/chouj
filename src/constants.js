@@ -2,10 +2,10 @@
 export const VERSION_NUMBER = process.env.GIT_COMMIT;
 console.warn(`当前代码Git Commit ID: ${process.env.GIT_COMMIT}`);
 // 所有参与抽奖人员
-export const ALL_USERS_ORIGINAL = process.env.ALL_USERS[0].data;
-console.warn('奖池人员名单\n', process.env.ALL_USERS[0].data);
+export const ALL_USERS_ORIGINAL = window.ALL_USERS;
+console.warn('奖池人员名单\n', window.ALL_USERS);
 // 默认抽奖流程
-export const PRESET_AWARD = process.env.PRESET_AWARD;
+export const PRESET_AWARD = window.PRESET_AWARD;
 
 // 数据存储在LocalStorage中的Key
 export const STORAGE_RANDOM_KEY = {
