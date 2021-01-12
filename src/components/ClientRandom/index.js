@@ -157,6 +157,7 @@ export default {
                 $scope.award = RandomIterator.getCurrentRandom($scope.awards);
                 awardsChangeHanlder($scope);
 
+                console.log('ALL_USERS_ORIGINAL', ALL_USERS_ORIGINAL);
                 $scope.ALL_USERS_ORIGINAL = ALL_USERS_ORIGINAL;
                 $scope.MAX_COL_SIZE = $rootScope.MAX_COL_SIZE;
             }
