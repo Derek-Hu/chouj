@@ -142,7 +142,7 @@ module.exports = {
           /\.less$/,
           /\.css$/,
           /\.json$/,
-          // /\.(gif|png|jpe?g|svg)$/i
+          /\.(gif|png|jpe?g|svg)$/i
         ],
         loader: 'url',
         query: {
@@ -150,13 +150,13 @@ module.exports = {
           name: 'static/media/[name].[hash:8].[ext]'
         }
       },
-      // {
-      //   test: /\.(gif|png|jpe?g|svg)$/i,
-      //   loaders: [
-      //     'url?limit=10000&hash=sha512&digest=hex&name=static/media/[name].[hash:8].[ext]',
-      //     'image-webpack'
-      //   ]
-      // },
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        loaders: [
+          'url?limit=10000&hash=sha512&digest=hex&name=static/media/[name].[hash:8].[ext]',
+          // 'image-webpack'
+        ]
+      },
 
       // Process JS with Babel.
       {

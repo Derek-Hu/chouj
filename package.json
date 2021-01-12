@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:3005",
-  "homepage": "/",
+  "homepage": "./",
   "mockServerPort": 3005,
   "devDependencies": {
     "babel-cli": "^6.18.0",
