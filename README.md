@@ -3,7 +3,7 @@
   * 观众页面：查看滚动效果及抽奖结果
   * 奖项设置： 增加/删除奖项，调整奖项抽取顺序
   * 查看获奖记录，可下载页面截图
-  * 开始/结束抽奖
+  * 开始/结束抽奖: 可将当前抽取批次中删除人员（标记为无效）
 
 # 抽奖程序使用方法：
 0. 直接下载[https://github.com/Derek-Hu/chouj/blob/master/build.zip](https://github.com/Derek-Hu/chouj/blob/master/build.zip)文件，无需使用源代码编译
