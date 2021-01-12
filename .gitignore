@@ -7,9 +7,8 @@
 coverage
 
 # production
-/build
 /temp
-
+/build/
 # misc
 .DS_Store
 .env
